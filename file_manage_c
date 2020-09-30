@@ -1,0 +1,33 @@
+#include<stdio.h>
+//#include<stdlib.h>
+#include<string.h>
+
+//fgetc(ptr) : the file management read only one character at a time on a pointer
+//fgets(string_address, value_till, ptr)     exp.fgets(str1,4,ptr) //it will 3 char form star1 
+//fputs ("data", ptr);     we can store the data in form of string or char.
+main()
+{
+	char c;
+	FILE *ptr=NULL;
+//	ptr=fopen("file.txt", "r");
+//	
+//	c=fgetc(ptr);
+//	printf("\n%c", c);
+//	
+//	c=fgetc(ptr);
+//	printf("\n%c", c);	
+//	
+//	fclose(ptr);
+	char str[40];
+//	fgets(str,11,ptr);  //it has one chcarcter missing so you enter 5 you get 4 bcz one car is null
+//	printf("%s", str);
+	ptr=fopen("file.txt", "w");
+	fputs("i am mubin", ptr);
+	fclose(ptr);
+	ptr=fopen("file.txt", "r");
+	fgets(str, 11, ptr);
+	printf("%s", str)
+//	
+//	printf("%c", ptr);
+
+;}
